@@ -23,6 +23,7 @@ from django.db.models import (
     ForeignKey, ManyToManyField, OneToOneField)
 if django.VERSION >= (1, 9):
     from django.db.models.fields.related import ReverseManyToOneDescriptor as ForeignRelatedObjectsDescriptor
+    from django.db.models import UUIDField
 else:
     from django.db.models.fields.related import ForeignRelatedObjectsDescriptor
 from django.db.models.fields.proxy import OrderWrt
@@ -163,6 +164,7 @@ default_mapping = {
     IPAddressField: generators.gen_ipv4,
     FileField: generators.gen_file_field,
     ImageField: generators.gen_image_field,
+    UUIDField: generators.gen_uuid,
 
     ContentType: generators.gen_content_type,
 }
