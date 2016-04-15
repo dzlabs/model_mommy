@@ -11,6 +11,7 @@ and value is the value for that argument.
 """
 
 import string
+import uuid
 from decimal import Decimal
 from os.path import abspath, join, dirname
 from random import randint, choice, random
@@ -87,6 +88,10 @@ def gen_decimal(max_digits, decimal_places):
     return Decimal("%s.%s" % (num_as_str(max_digits - decimal_places - 1),
                               num_as_str(decimal_places)))
 gen_decimal.required = ['max_digits', 'decimal_places']
+
+
+def gen_uuid():
+    return uuid.uuid4()
 
 
 def gen_date():
